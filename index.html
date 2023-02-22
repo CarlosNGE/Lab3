@@ -5,37 +5,80 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lab3: Conditions, Arrays, Events</title>
-    <style>
-        .box{
-            width: 50px;
-            height: 50px;
-            border: 5px solid;
-            transition: all 2s ease-in-out;
-        }
-
-        .move{
-            transform: translateX('300px');
-            background-color: brown;
-        }
-    </style>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    
 </head>
 <body>
-    <h1>Lab3</h1>
 
-    <button id="mybutton">Move box</button>
-    <div class="box">box</div>
+    <h1 class="heading">Lab3</h1>
+    <p>Click anywhere inside the box</p>
+
+    <div class="dot-container">
+        <div class="dot"></div>
+    </div>
+
+
+
+
+
+    <button id="btn1" class="btn1">Move box</button>
+    <div class="box"></div>
+
+    <button id="btn2" class="btn2">Change</button>
+    <div class="box2"></div>
+
+    
 
 
     <script>
+        
+        const dot = document.querySelector('.dot');
+        document.body.addEventListener('click', checkLoc);
+        
+        function checkLoc(e){
+            
+            //box.style.transform = translate(e.clientX + "px", e.clientY + "px");
+            
+            dot.style.transform = `translateY(${e.clientY - 280}px)`;
+            dot.style.transform += `translateX(${e.clientX - 280}px)`;
+            dot.style.opacity = 1;
+
+            console.log(e.clientX, e.clientY);
+            console.log(e.offsetX, e.offsetY);
+
+            
+        }
+
+
+
         // make reference to button
 
-        const mybutton = document.getElementById('mybutton');
+        const button1 = document.getElementById('btn1');
 
         // create listener to detect click on button
-        mybutton.addEventListener('click', (e) => {
+        button1.addEventListener('click', moveBox);
+
+        function moveBox(e){
             const box = document.querySelector('.box');
             box.classList.toggle('move');
-        });
+        }
+
+        // make reference to button
+
+        const button2 = document.getElementById('btn2');
+
+        // create listener to detect click on button
+        button2.addEventListener('click', moveBox1);
+
+        function moveBox1(e){
+            const box = document.querySelector('.dot-container');
+            box.classList.toggle('change');
+        }
+
+       
+
+
 
 
 
@@ -48,19 +91,19 @@
         
         //get user input
 
-        const age = prompt('How old are you?');
+        //const age = prompt('How old are you?');
             
         // if age is over 21 then show message
 
-        if (age > 21){
-            alert('21 or over');
-        } else if(age == 21){
-            document.body.style.backgroundColor = 'blue' ;
-        }
-        else{
-            alert ('under 21');
-            window.location = "https://google.com";
-        }
+       //if (age > 21){
+       //     alert('21 or over');
+       // } else if(age == 21){
+       //     document.body.style.backgroundColor = 'blue' ;
+      //  }
+       // else{
+       //     alert ('under 21');
+       //     window.location = "https://google.com";
+      //  }
      </script>
 </body>
 </html>
