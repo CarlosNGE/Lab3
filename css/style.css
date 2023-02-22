@@ -10,20 +10,50 @@ body{
     justify-content: center;
     align-items: center;
     text-align: center;
+    background-color: #f4f2f2;
 }
 
 .heading{
+    font-family: roboto;
+    font-weight: bolder;
+    letter-spacing: 1px;
     margin: 3rem 0 3rem 0;
 }
 
+.intro{
+    font-family: nunito;
+    font-size: 20px;
+    letter-spacing: .3px;
+    animation: fontbold 2s ease 8;
+}
+
+@keyframes fontbold {
+
+    0% {
+      font-weight: 0;
+    }
+
+    50% {
+        font-weight: 700;
+        letter-spacing: 1px;
+    }
+
+    100% {
+        font-weight: 0;
+    }
+
+  }
+
 
 .dot-container{
-    border: 3px solid #000;
+    border: 1px solid #000;
+    background-color: #fff;
     border-radius: 2%;
-    width: 700px;
+    width: 600px;
     height: 600px;
-    margin: 4rem 0 4rem 0;
-   
+    margin: 7.5rem 0 7.5rem 0;
+    cursor: pointer;
+    transition: all 2s ease-in-out;
 }
 
 @keyframes background-color {
@@ -32,31 +62,15 @@ body{
       background-color: #90cbf9;
     }
 
-    10% {
+    25% {
         background-color: #41a7f5;
       }
       
-    20% {
+    50% {
         background-color: #1a8ae5;
     }
-
-    30%{
-        background-color: #1065c0;
-    }
-
-    60%{
-        background-color: #0747a1;
-    }
-    
-    70%{
-        background-color: #1065c0;
-    }  
-    
-    80%{
-        background-color: #1a8ae5;
-    }   
-
-    90%{
+   
+    75%{
         background-color: #41a7f5;
     }   
 
@@ -74,10 +88,19 @@ body{
     transition: all .4s ease-out;
 }
 
-.btn1{
+.btn-container{
+    width: 500px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn1, .btn2{
     width: 100px;
     height: 40px;
+    font-family: roboto;
     font-size: 15px;
+    font-weight:600;
+    letter-spacing: 1.8px;
 }
 
 .box, .box2{
@@ -89,11 +112,11 @@ body{
     transition: all 2s ease-in-out;
 }
 
-.move{
-    transform: translateX(300px);
-    background-color: brown;
+.rotate{
+    transform: rotate(360deg);
 }
 
 .change{
-    animation: background-color 20s ease  backwards infinite;
+    background-color: #90cbf9;
+    animation: background-color 10s ease  backwards infinite;
 }
