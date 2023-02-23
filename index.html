@@ -35,14 +35,15 @@
     <script>
         
         const dot = document.querySelector('.dot');
-        document.body.addEventListener('click', checkLoc);
+        const container = document.querySelector('.dot-container');
+        container.addEventListener('click', checkLoc);
         
         function checkLoc(e){
             
             //box.style.transform = translate(e.clientX + "px", e.clientY + "px");
             
-            dot.style.transform = `translateY(${e.clientY - 280}px)`;
-            dot.style.transform += `translateX(${e.clientX - 280}px)`;
+            dot.style.transform = `translateY(${e.offsetY - 25}px)`;
+            dot.style.transform += `translateX(${e.offsetX - 25}px)`;
             dot.style.opacity = 1;
 
             console.log("You have clicked")

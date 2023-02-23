@@ -23,6 +23,7 @@ body{
 .intro{
     font-family: nunito;
     font-size: 20px;
+    color: rgb(229, 76, 76);
     letter-spacing: .3px;
     animation: fontbold 2s ease 8;
 }
@@ -59,23 +60,23 @@ body{
 @keyframes background-color {
 
     0% {
-      background-color: #90cbf9;
+      background-color: #F8D1CD;
     }
 
     25% {
-        background-color: #41a7f5;
+        background-color: #F0A8AB;
       }
       
     50% {
-        background-color: #1a8ae5;
+        background-color: #f6969f;
     }
    
     75%{
-        background-color: #41a7f5;
+        background-color: #F0A8AB;
     }   
 
     10%{
-        background-color: #90cbf9;
+        background-color: #F8D1CD;
     }   
   }
 
@@ -101,6 +102,7 @@ body{
     font-size: 15px;
     font-weight:600;
     letter-spacing: 1.8px;
+    color: rgb(229, 76, 76);;
 }
 
 .box, .box2{
@@ -117,6 +119,47 @@ body{
 }
 
 .change{
-    background-color: #90cbf9;
+    background-color: #F8D1CD;
     animation: background-color 10s ease  backwards infinite;
+}
+
+@media (max-width: 450px) {
+
+    .dot{
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        background: #c00;
+        opacity: 0;
+        transition: all .4s ease-out;
+    }
+
+    .dot-container{
+        border: 1px solid #000;
+        background-color: #fff;
+        border-radius: 2%;
+        width: 300px;
+        height: 300px;
+        margin: 6rem 0 6rem 0;
+        cursor: pointer;
+        transition: all 2s ease-in-out;
+    }
+
+    .btn-container{
+        width: 240px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .btn1, .btn2{
+        width: 75px;
+        height: 35px;
+        font-family: roboto;
+        font-size: 12px;
+        font-weight:600;
+        letter-spacing: 1.2px;
+        color: rgb(229, 76, 76);;
+    }
+
+    
 }
